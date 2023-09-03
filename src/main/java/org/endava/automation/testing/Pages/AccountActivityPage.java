@@ -3,6 +3,7 @@ package org.endava.automation.testing.Pages;
 import org.endava.automation.testing.Pages.BasePage.ZeroBankBasePage;
 import org.endava.automation.testing.Utils.BasePage;
 import java.util.List;
+import org.endava.automation.testing.Utils.Log;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,12 +24,14 @@ public class AccountActivityPage extends ZeroBankBasePage {
     }
 
     public void chooseFromAccount(String account) {
+        Log.uiLogger("Choosing account: " + account);
         chooseFromDDSOptionContainsText(ddlAccount, account);
     }
 
     public Double readDepositsAndReturnSum() {
+        Log.elementLocatingLogger("Reading deposits from the table.");
         List<WebElement> depositElements = waitAndFindElementsFromRoot(By.cssSelector("tbody tr td:nth-child(3)"));
-        return depositElements.stream()
+        double sum = depositElements.stream()
             .mapToDouble(element -> {
                 String deposit = element.getText();
                 if(deposit.equals("")){
@@ -37,22 +40,36 @@ public class AccountActivityPage extends ZeroBankBasePage {
                 return Double.parseDouble(deposit);
             })
             .sum();
+        Log.uiLogger("Sum of deposits: " + sum);
+        return sum;
     }
 
     public Double readWithdrawalsAndReturnSum() {
-        List<WebElement> depositElements = waitAndFindElementsFromRoot(By.cssSelector("tbody tr td:nth-child(4)"));
-        return depositElements.stream()
+        Log.elementLocatingLogger("Reading withdrawals from the table.");
+        List<WebElement> withdrawalElements = waitAndFindElementsFromRoot(By.cssSelector("tbody tr td:nth-child(4)"));
+        double sum = withdrawalElements.stream()
             .mapToDouble(element -> {
-                String deposit = element.getText();
-                if(deposit.equals("")){
+                String withdrawal = element.getText();
+                if(withdrawal.equals("")){
                     return 0.0;
                 }
-                return Double.parseDouble(deposit);
+                return Double.parseDouble(withdrawal);
             })
             .sum();
+        Log.uiLogger("Sum of withdrawals: " + sum);
+        return sum;
     }
 
     public double calculateWithdrawalDepositRatio() {
-        return readWithdrawalsAndReturnSum() / readDepositsAndReturnSum();
+        double withdrawals = readWithdrawalsAndReturnSum();
+        double deposits = readDepositsAndReturnSum();
+        Log.uiLogger("Calculating withdrawal/deposit ratio.");
+        if (deposits == 0) {
+            Log.warn("Deposits are zero. Avoid division by zero.");
+            return 0.0;
+        }
+        double ratio = withdrawals / deposits;
+        Log.uiLogger("Withdrawal/Deposit Ratio: " + ratio);
+        return ratio;
     }
 }

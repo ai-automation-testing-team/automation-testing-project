@@ -2,6 +2,7 @@ package org.endava.automation.testing.Pages;
 
 import org.endava.automation.testing.Pages.BasePage.ZeroBankBasePage;
 import org.endava.automation.testing.Utils.BasePage;
+import org.endava.automation.testing.Utils.Log;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,9 +19,12 @@ public class MyMoneyMapPage extends ZeroBankBasePage {
     }
 
     public String readSummaryLeftAmount() {
+        Log.dataExtractionLogger("Reading summary left amount.");
         WebElement leftAmount = waitAndFindElementFromRoot(
             By.cssSelector("#summaryReport tr:last-child td:last-child"));
-        return leftAmount.getText();
+        String amount = leftAmount.getText();
+        Log.dataExtractionLogger("Summary left amount read: " + amount);
+        return amount;
     }
 
 }
