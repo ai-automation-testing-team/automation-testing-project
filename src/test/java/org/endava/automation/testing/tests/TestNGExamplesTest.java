@@ -22,12 +22,6 @@ public class TestNGExamplesTest extends BaseTest {
             ConfigurationConstants.USERNAME_COURSE, ConfigurationConstants.PASSWORD_COURSE);
     }
 
-    @BeforeMethod
-    protected void beforeMethod(ITestResult result) {
-        String testName = result.getMethod().getMethodName();
-        Log.stepLogger("Test with name: " + testName + " has started.");
-    }
-
     @Test(priority = 1)
     public void checkNullPointerException() {
         String accountFromValue = zeroBankService.validateAccountFromInAccountActivity();
@@ -59,11 +53,5 @@ public class TestNGExamplesTest extends BaseTest {
             TransferFundsAccountTypesEnum.CHECKING_ACCOUNT, TransferFundsAccountTypesEnum.CREDIT_CARD_ACCOUNT,
             "500", "Test Description", "New Test Description");
         Assert.assertEquals(descriptionValue, "New Test Description", "Description value is not correct");
-    }
-
-    @AfterMethod
-    protected void afterMethod(ITestResult result) {
-        String testName = result.getMethod().getMethodName();
-        Log.stepLogger("Test with name: " + testName + " has ended.");
     }
 }

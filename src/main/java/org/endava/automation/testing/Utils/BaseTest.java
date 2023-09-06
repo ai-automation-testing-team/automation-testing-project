@@ -3,6 +3,7 @@ package org.endava.automation.testing.Utils;
 import java.io.IOException;
 import org.endava.automation.testing.Enums.DriverTypeEnum;
 import org.openqa.selenium.WebDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -33,12 +34,16 @@ public class BaseTest {
     }
 
     @BeforeMethod
-    protected void beforeMethod() {
+    protected void beforeMethod(ITestResult result) {
+        String testName = result.getMethod().getMethodName();
+        Log.stepLogger("Test with name: " + testName + " has started.");
         softAssert = new SoftAssert();
     }
 
     @AfterMethod
-    protected void afterMethod() {
+    protected void afterMethod(ITestResult result) {
+        String testName = result.getMethod().getMethodName();
+        Log.stepLogger("Test with name: " + testName + " has ended.");
         softAssert.assertAll();
     }
 
