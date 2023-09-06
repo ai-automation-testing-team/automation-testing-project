@@ -35,7 +35,7 @@ public class LoginPage extends BasePage {
     }
 
     public void insertPassword(String password) {
-        Log.uiLogger("Inserting password.");
+        Log.uiLogger("Inserting password: " + password);
         clearAndSendKeys(inputPassword, password);
     }
 
