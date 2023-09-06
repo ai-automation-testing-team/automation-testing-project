@@ -4,7 +4,11 @@ import org.endava.automation.testing.Enums.TransferFundsAccountTypesEnum;
 import org.endava.automation.testing.Services.ZeroBankService;
 import org.endava.automation.testing.Utils.BaseTest;
 import org.endava.automation.testing.Utils.ConfigurationConstants;
+import org.endava.automation.testing.Utils.Log;
 import org.testng.Assert;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class TestNGExamplesTest extends BaseTest {
@@ -16,6 +20,12 @@ public class TestNGExamplesTest extends BaseTest {
         zeroBankService = new ZeroBankService(driver);
         zeroBankService.loginUsingCredentials(
             ConfigurationConstants.USERNAME_COURSE, ConfigurationConstants.PASSWORD_COURSE);
+    }
+
+    @BeforeMethod
+    protected void beforeMethod(ITestResult result) {
+        String testName = result.getMethod().getMethodName();
+        Log.stepLogger("Test with name: " + testName + " has started.");
     }
 
     @Test(priority = 1)
@@ -49,5 +59,11 @@ public class TestNGExamplesTest extends BaseTest {
             TransferFundsAccountTypesEnum.CHECKING_ACCOUNT, TransferFundsAccountTypesEnum.CREDIT_CARD_ACCOUNT,
             "500", "Test Description", "New Test Description");
         Assert.assertEquals(descriptionValue, "New Test Description", "Description value is not correct");
+    }
+
+    @AfterMethod
+    protected void afterMethod(ITestResult result) {
+        String testName = result.getMethod().getMethodName();
+        Log.stepLogger("Test with name: " + testName + " has ended.");
     }
 }

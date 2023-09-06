@@ -49,7 +49,7 @@ public class LoginPage extends BasePage {
         insertUserName(userName);
         insertPassword(password);
         clickSignIn();
-        Log.uiLogger("Login successful.");
+        Log.uiLogger("User is successfully logged in.");
         getDriver().get("http://zero.webappsecurity.com/bank/account-summary.html");
         return new AccountSummaryPage(getDriver());
     }

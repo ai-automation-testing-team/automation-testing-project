@@ -102,7 +102,7 @@ public abstract class BasePage {
             String optionText = ddlFromAccountsOption.getText();
             if (optionText.contains(itemText)) {
                 ddlFromAccountsOption.click();
-                Log.uiLogger("Option with text '" + itemText + "' selected.");
+                Log.elementLocatingLogger("Option with text '" + itemText + "' selected.");
                 break;
             }
         }

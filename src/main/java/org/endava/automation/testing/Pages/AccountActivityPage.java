@@ -61,14 +61,8 @@ public class AccountActivityPage extends ZeroBankBasePage {
     }
 
     public double calculateWithdrawalDepositRatio() {
-        double withdrawals = readWithdrawalsAndReturnSum();
-        double deposits = readDepositsAndReturnSum();
         Log.uiLogger("Calculating withdrawal/deposit ratio.");
-        if (deposits == 0) {
-            Log.warn("Deposits are zero. Avoid division by zero.");
-            return 0.0;
-        }
-        double ratio = withdrawals / deposits;
+        double ratio = readWithdrawalsAndReturnSum() / readDepositsAndReturnSum();
         Log.uiLogger("Withdrawal/Deposit Ratio: " + ratio);
         return ratio;
     }
