@@ -19,14 +19,14 @@ public abstract class ZeroBankBasePage extends BasePage {
 
     public TransferFundsPage navigateToTransferFunds() {
         WebElement linkButton = waitAndFindElementFromRoot(By.id(HeaderMenuItemsEnum.TRANSFER_FUNDS.toString()));
-        linkButton.click();
+        waitForElementToBeClickableAndClick(linkButton);
         Log.userFlowLogger("User navigates to 'Transfer Funds' page.");
         return new TransferFundsPage(getDriver());
     }
 
     public PayBillsPage navigateToPayBills() {
         WebElement linkButton = waitAndFindElementFromRoot(By.id(HeaderMenuItemsEnum.PAY_BILLS.toString()));
-        linkButton.click();
+        waitForElementToBeClickableAndClick(linkButton);
         Log.userFlowLogger("User navigates to 'Pay Bills' page.");
         return new PayBillsPage(getDriver());
     }
@@ -34,7 +34,7 @@ public abstract class ZeroBankBasePage extends BasePage {
     public AccountActivityPage navigateToAccountActivity() {
         WebElement linkButton =
             waitAndFindElementFromRoot(By.id(HeaderMenuItemsEnum.ACCOUNT_ACTIVITY.toString()));
-        linkButton.click();
+        waitForElementToBeClickableAndClick(linkButton);
         Log.userFlowLogger("User navigates to 'Account Activity' page.");
         return new AccountActivityPage(getDriver());
     }
@@ -42,7 +42,7 @@ public abstract class ZeroBankBasePage extends BasePage {
     public MyMoneyMapPage navigateToMyMoneyMap() {
         WebElement linkButton =
             waitAndFindElementFromRoot(By.id(HeaderMenuItemsEnum.MY_MONEY_MAP.toString()));
-        linkButton.click();
+        waitForElementToBeClickableAndClick(linkButton);
         Log.userFlowLogger("User navigates to 'My Money Map' page.");
         return new MyMoneyMapPage(getDriver());
     }
