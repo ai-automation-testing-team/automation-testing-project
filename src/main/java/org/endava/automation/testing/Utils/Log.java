@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 public class Log {
 
     protected static Logger log = LoggerFactory.getLogger(Log.class.getName());
-    private static final String LOG_MESSAGE_FORMAT = "{LogType} {message}";
+    private static final String LOG_MESSAGE_FORMAT = "{LogType} - {message}";
 
     public static String formatLogMessage(String logType, String message) {
         return LOG_MESSAGE_FORMAT

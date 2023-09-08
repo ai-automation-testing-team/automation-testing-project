@@ -8,8 +8,61 @@
     <artifactId>automation-testing-project</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+
+        <selenium.version>4.8.1</selenium.version>
+        <lombok.version>1.18.20</lombok.version>
+        <testng.version>7.8.0</testng.version>
+        <junit-jupiter-api.version>5.9.2</junit-jupiter-api.version>
+        <junit-jupiter-engine.version>5.9.2</junit-jupiter-engine.version>
+        <commons-io.version>2.4</commons-io.version>
+        <webdrivermanager.version>5.3.2</webdrivermanager.version>
+        <slf4j-api.version>1.7.5</slf4j-api.version>
+        <slf4j-log4j12.version>1.7.2</slf4j-log4j12.version>
+        <allure-testng.version>2.24.0</allure-testng.version>
+        <configuration.version>1.6</configuration.version>
+        <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
+        <aspectjweaver.version>1.9.7</aspectjweaver.version>
+        <allure-maven.version>2.10.0</allure-maven.version>
+        <testSuitePath>src\test\java\TestSuites\</testSuitePath>
+        <base.url>http://zero.webappsecurity.com/</base.url>
+        <driver.version>116.0.5845.96</driver.version>
+        <browser.type>chrome</browser.type>
+        <token></token>
+    </properties>
+
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                    <argLine>
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectjweaver.version}/aspectjweaver-${aspectjweaver.version}.jar" -Xmx1024m
+                    </argLine>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>${aspectjweaver.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>${allure-maven.version}</version>
+                <configuration>
+                    <reportVersion>2.13.8</reportVersion>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>properties-maven-plugin</artifactId>
@@ -78,22 +131,6 @@
             </properties>
         </profile>
     </profiles>
-
-    <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-
-        <selenium.version>4.8.0</selenium.version>
-        <lombok.version>1.18.20</lombok.version>
-        <testng.version>7.3.0</testng.version>
-        <configuration.version>1.6</configuration.version>
-        <testSuitePath>src\test\java\TestSuites\</testSuitePath>
-        <base.url>http://zero.webappsecurity.com/</base.url>
-        <driver.version>116.0.5845.96</driver.version>
-        <browser.type>chrome</browser.type>
-        <token></token>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -111,13 +148,13 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.9.2</version>
+            <version>${junit-jupiter-api.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.9.2</version>
+            <version>${junit-jupiter-engine.version}</version>
         </dependency>
 
         <dependency>
@@ -130,25 +167,31 @@
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
-            <version>2.4</version>
+            <version>${commons-io.version}</version>
         </dependency>
 
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>5.3.2</version>
+            <version>${webdrivermanager.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.5</version>
+            <version>${slf4j-api.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
-            <version>1.7.2</version>
+            <version>${slf4j-log4j12.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>${allure-testng.version}</version>
         </dependency>
 
         <dependency>
@@ -175,4 +218,5 @@
             <version>1.0.12</version>
         </dependency>
     </dependencies>
+
 </project>

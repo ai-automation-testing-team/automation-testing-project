@@ -18,13 +18,12 @@ public class MyMoneyMapPage extends ZeroBankBasePage {
         return new MyMoneyMapPage(driver);
     }
 
-    public String readSummaryLeftAmount() {
-        Log.dataExtractionLogger("Reading summary left amount.");
+    public String readSummaryAmountLeft() {
+        Log.dataExtractionLogger("Reading summary amount left.");
         WebElement leftAmount = waitAndFindElementFromRoot(
             By.cssSelector("#summaryReport tr:last-child td:last-child"));
         String amount = leftAmount.getText();
-        Log.dataExtractionLogger("Summary left amount read: " + amount);
+        Log.dataExtractionLogger("Summary amount left read: " + amount);
         return amount;
     }
-
 }

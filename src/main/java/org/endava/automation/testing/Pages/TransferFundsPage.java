@@ -1,9 +1,9 @@
 package org.endava.automation.testing.Pages;
 
-import org.endava.automation.testing.Enums.TransferFundsAccountTypesEnum;
 import org.endava.automation.testing.Pages.BasePage.ZeroBankBasePage;
 import org.endava.automation.testing.Utils.BasePage;
 import org.endava.automation.testing.Utils.Log;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -34,14 +34,14 @@ public class TransferFundsPage extends ZeroBankBasePage {
         return new TransferFundsPage(driver);
     }
 
-    public void chooseFromAccount(TransferFundsAccountTypesEnum fromAccount) {
-        Log.uiLogger("Choosing 'From Account': " + fromAccount.toString());
-        chooseFromDDSOptionContainsText(ddlFromAccount, fromAccount.toString());
+    public void chooseFromAccount(String fromAccount) {
+        Log.uiLogger("Choosing 'From Account': " + fromAccount);
+        chooseFromDDSOptionContainsText(ddlFromAccount, fromAccount);
     }
 
-    public void chooseToAccount(TransferFundsAccountTypesEnum toAccount) {
-        Log.uiLogger("Choosing 'To Account': " + toAccount.toString());
-        chooseFromDDSOptionContainsText(ddlToAccount, toAccount.toString());
+    public void chooseToAccount(String toAccount) {
+        Log.uiLogger("Choosing 'To Account': " + toAccount);
+        chooseFromDDSOptionContainsText(ddlToAccount, toAccount);
     }
 
     public void insertAmountValue(String amount) {
@@ -51,10 +51,6 @@ public class TransferFundsPage extends ZeroBankBasePage {
 
     public void insertDescription(String description) {
         Log.uiLogger("Inserting description: " + description);
-        // inputDescription.findElement(By.xpath("./..")).getAttribute("innerHTML")
-        // input description parent html:
-//                                    <input type="text" id="tf_description" class="span4" disabled="" value="Test Description">
-//                                    <input type="hidden" name="description" value="Test Description">
         clearAndSendKeys(inputDescription, description);
     }
 
@@ -63,14 +59,18 @@ public class TransferFundsPage extends ZeroBankBasePage {
         btnSubmit.click();
     }
 
-    public void insertAllValuesAndClickContinue(TransferFundsAccountTypesEnum fromAccount,
-                                                TransferFundsAccountTypesEnum toAccount, String amount,
-                                                String description) {
+    public void clickContinue() {
+        Log.uiLogger("Clicking the 'Continue' button.");
+        btnSubmit.click();
+    }
+
+    public void insertAllValuesAndClickContinue(String fromAccount, String toAccount,
+                                                String amount, String description) {
         chooseFromAccount(fromAccount);
         chooseToAccount(toAccount);
         insertAmountValue(amount);
         insertDescription(description);
-        clickSubmit();
+        clickContinue();
     }
 
     public String readValueFromAccountFromField() {
@@ -81,10 +81,20 @@ public class TransferFundsPage extends ZeroBankBasePage {
     public String readValueFromDescriptionField() {
         Log.uiLogger("Reading value from 'Description' field.");
         return getValueFromInputField(inputDescription);
-
     }
 
-    private String getValueFromInputField(WebElement inputField) {
-        return inputField.getAttribute("value");
+    public String readTransactionAmount() {
+        Log.uiLogger("Reading Amount field after transaction");
+        WebElement amount = waitAndFindElementFromRoot(By.cssSelector(".board-content .row:last-child div:last-child"));
+        String transactionAmount = amount.getText();
+        Log.uiLogger("Transaction Amount value is: " + transactionAmount);
+        return transactionAmount;
+    }
+
+    public boolean validateTransactionIsSubmittedSuccessfully() {
+        WebElement messageSuccessElement = waitAndFindElementFromRoot(By.className("alert-success"));
+        String messageSuccess = messageSuccessElement.getText();
+        Log.uiLogger("Reading transaction message: " + messageSuccess);
+        return messageSuccess.contains("successfully");
     }
 }
