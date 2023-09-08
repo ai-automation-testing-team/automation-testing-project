@@ -62,25 +62,21 @@ public class BaseTest {
         driver.quit();
     }
 
-    @AfterSuite
+    @AfterSuite(alwaysRun = true)
     protected void afterSuite() throws IOException {
         Git git = Git.open(new File(""));
         String currentBranch = git.getRepository().getFullBranch();
         long l = System.currentTimeMillis();
         String newBranchName = "ai-description-" + l;
-        String repoPath = "";
-        String token = System.getenv("TOKEN");
-        String repoOwner = "sushelski";
-        String repoName = "AI-In-Test-Automation";
-        String title = "Pull Request AI";
-        String description = "Pull Request Description AI";
+        String token = System.getProperty("token");
 
         GitOperations gitOps = new GitOperations();
 
         try {
-            gitOps.createBranchAndCommit(repoPath, newBranchName);
-            gitOps.pushToRemote(repoPath, token);
-            gitOps.createPullRequest(repoOwner, repoName, title, description, newBranchName, currentBranch, token);
+            gitOps.createBranchAndCommit(aiConfig.repoPath(), newBranchName);
+            gitOps.pushToRemote(aiConfig.repoPath(), token);
+            gitOps.createPullRequest(aiConfig.repoOwner(), aiConfig.repoName(), aiConfig.prTitle(),
+                aiConfig.prDescription(), newBranchName, currentBranch, token);
         } catch (IOException | GitAPIException e) {
             e.printStackTrace();
         }
