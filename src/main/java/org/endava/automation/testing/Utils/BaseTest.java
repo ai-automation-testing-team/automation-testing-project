@@ -1,11 +1,17 @@
 package org.endava.automation.testing.Utils;
 
+import java.io.File;
 import java.io.IOException;
+import org.aeonbits.owner.ConfigCache;
+import org.eclipse.jgit.api.Git;
+import org.eclipse.jgit.api.errors.GitAPIException;
+import org.endava.automation.testing.Config.AIConfig;
 import org.endava.automation.testing.Enums.DriverTypeEnum;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.asserts.SoftAssert;
@@ -15,6 +21,7 @@ public class BaseTest {
     protected WebDriver driver;
     protected String baseUrl;
     protected SoftAssert softAssert;
+    protected static final AIConfig aiConfig = ConfigCache.getOrCreate(AIConfig.class);
 
     @BeforeClass
     protected void beforeClass() throws IOException {
@@ -53,5 +60,29 @@ public class BaseTest {
     @AfterClass(alwaysRun = true)
     protected void afterClass() {
         driver.quit();
+    }
+
+    @AfterSuite
+    protected void afterSuite() throws IOException {
+        Git git = Git.open(new File(""));
+        String currentBranch = git.getRepository().getFullBranch();
+        long l = System.currentTimeMillis();
+        String newBranchName = "ai-description-" + l;
+        String repoPath = "";
+        String token = System.getenv("TOKEN");
+        String repoOwner = "sushelski";
+        String repoName = "AI-In-Test-Automation";
+        String title = "Pull Request AI";
+        String description = "Pull Request Description AI";
+
+        GitOperations gitOps = new GitOperations();
+
+        try {
+            gitOps.createBranchAndCommit(repoPath, newBranchName);
+            gitOps.pushToRemote(repoPath, token);
+            gitOps.createPullRequest(repoOwner, repoName, title, description, newBranchName, currentBranch, token);
+        } catch (IOException | GitAPIException e) {
+            e.printStackTrace();
+        }
     }
 }
