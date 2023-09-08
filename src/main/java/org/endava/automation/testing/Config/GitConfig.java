@@ -2,8 +2,8 @@ package org.endava.automation.testing.Config;
 
 import org.aeonbits.owner.Config;
 
-@Config.Sources("classpath:ai-config.properties")
-public interface AIConfig extends Config {
+@Config.Sources("classpath:gitConfig.properties")
+public interface GitConfig extends Config {
 
     @Key("repo.path")
     String repoPath();
