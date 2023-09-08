@@ -26,6 +26,10 @@
         <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
         <aspectjweaver.version>1.9.7</aspectjweaver.version>
         <allure-maven.version>2.10.0</allure-maven.version>
+        <org.eclipse.jgit.version>6.6.1.202309021850-r</org.eclipse.jgit.version>
+        <org.eclipse.jgit.ssh.jsch.version>6.6.1.202309021850-r</org.eclipse.jgit.ssh.jsch.version>
+        <httpclient.version>4.5.13</httpclient.version>
+        <owner.version>1.0.12</owner.version>
         <testSuitePath>src\test\java\TestSuites\</testSuitePath>
         <base.url>http://zero.webappsecurity.com/</base.url>
         <driver.version>116.0.5845.96</driver.version>
@@ -40,6 +44,12 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
                 <configuration>
+                    <systemProperties>
+                        <property>
+                            <name>token</name>
+                            <value>${token}</value>
+                        </property>
+                    </systemProperties>
                     <suiteXmlFiles>
                         <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
@@ -78,19 +88,6 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.19.1</version>
-                <configuration>
-                    <systemProperties>
-                        <property>
-                            <name>token</name>
-                            <value>${token}</value>
-                        </property>
-                    </systemProperties>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -197,25 +194,25 @@
         <dependency>
             <groupId>org.eclipse.jgit</groupId>
             <artifactId>org.eclipse.jgit</artifactId>
-            <version>6.6.1.202309021850-r</version>
+            <version>${org.eclipse.jgit.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.eclipse.jgit</groupId>
             <artifactId>org.eclipse.jgit.ssh.jsch</artifactId>
-            <version>6.6.1.202309021850-r</version>
+            <version>${org.eclipse.jgit.ssh.jsch.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
-            <version>4.5.13</version>
+            <version>${httpclient.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.aeonbits.owner</groupId>
             <artifactId>owner</artifactId>
-            <version>1.0.12</version>
+            <version>${owner.version}</version>
         </dependency>
     </dependencies>
 
