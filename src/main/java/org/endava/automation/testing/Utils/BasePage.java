@@ -25,8 +25,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 @Getter
 public abstract class BasePage {
 
-    public final Map<Class<? extends Exception>, BiConsumer<WebElement, By>> exceptionFindFromRootMap = populateMapFromRoot();
-    public final Map<Class<? extends Exception>, BiConsumer<WebDriver, By>> exceptionFindPerLocatorMap = populateMapPerLocator();
+    public final Map<Class<? extends Exception>, BiConsumer<WebElement, By>> exceptionFindFromRootMap = populateMapElementFromParent();
+    public final Map<Class<? extends Exception>, BiConsumer<WebDriver, By>> exceptionFindPerLocatorMap = populateMapElementFromRoot();
     public final Map<Class<? extends Exception>, Consumer<WebElement>> exceptionPerElementMap = populateMapPerElement();
 
     private WebDriver driver;
@@ -48,15 +48,15 @@ public abstract class BasePage {
 
     public abstract BasePage newInstance(WebDriver driver);
 
-    private static Map<Class<? extends Exception>, BiConsumer<WebElement, By>> populateMapFromRoot() {
+    private static Map<Class<? extends Exception>, BiConsumer<WebElement, By>> populateMapElementFromParent() {
         Map<Class<? extends Exception>, BiConsumer<WebElement, By>> exceptionMap = new HashMap<>();
-        exceptionMap.put(NoSuchElementException.class, ExceptionLogging::elementNotFoundFromRoot);
-        exceptionMap.put(InvalidElementStateException.class, ExceptionLogging::elementNotFoundFromRoot);
-        exceptionMap.put(TimeoutException.class, ExceptionLogging::elementNotFoundFromRoot);
+        exceptionMap.put(NoSuchElementException.class, ExceptionLogging::elementNotFoundFromParent);
+        exceptionMap.put(InvalidElementStateException.class, ExceptionLogging::elementNotFoundFromParent);
+        exceptionMap.put(TimeoutException.class, ExceptionLogging::elementNotFoundFromParent);
         return exceptionMap;
     }
 
-    private static Map<Class<? extends Exception>, BiConsumer<WebDriver, By>> populateMapPerLocator() {
+    private static Map<Class<? extends Exception>, BiConsumer<WebDriver, By>> populateMapElementFromRoot() {
         Map<Class<? extends Exception>, BiConsumer<WebDriver, By>> exceptionMap = new HashMap<>();
         exceptionMap.put(TimeoutException.class, ExceptionLogging::elementNotFoundPerLocator);
         return exceptionMap;
