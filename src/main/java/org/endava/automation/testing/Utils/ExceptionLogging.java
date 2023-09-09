@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 
 public class ExceptionLogging {
 
-    static void elementNotFoundFromRoot(WebElement root, By byLocator) {
+    static void elementNotFoundFromParent(WebElement root, By byLocator) {
         String innerHTML = root.getAttribute("innerHTML");
 
         StringBuilder sb = new StringBuilder();
@@ -38,8 +38,7 @@ public class ExceptionLogging {
             .append("\n")
             .append("HTML: ")
             .append("\n")
-            .append(innerHTML)
-            .append("\n");
+            .append(innerHTML);
 
         Log.errorLogger("Exception was thrown because of this reason:\n" + sb.toString());
     }
@@ -52,10 +51,9 @@ public class ExceptionLogging {
         sb.append("Element: ")
             .append(element)
             .append(" wasn't interactable. ")
-            .append("He is located inside his parent element with HTML: ")
+            .append("It is located inside his parent element with HTML: ")
             .append("\n")
-            .append(parentInnerHTML)
-            .append("\n");
+            .append(parentInnerHTML);
 
         Log.errorLogger("Exception was thrown because of this reason:\n" + sb.toString());
     }
