@@ -23,7 +23,7 @@
         <slf4j-log4j12.version>1.7.2</slf4j-log4j12.version>
         <allure-testng.version>2.24.0</allure-testng.version>
         <configuration.version>1.6</configuration.version>
-        <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
+        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
         <aspectjweaver.version>1.9.7</aspectjweaver.version>
         <allure-maven.version>2.10.0</allure-maven.version>
         <org.eclipse.jgit.version>6.6.1.202309021850-r</org.eclipse.jgit.version>
@@ -34,7 +34,7 @@
         <base.url>http://zero.webappsecurity.com/</base.url>
         <driver.version>116.0.5845.96</driver.version>
         <browser.type>chrome</browser.type>
-        <token></token>
+<!--        <token></token>-->
     </properties>
 
     <build>
@@ -44,15 +44,15 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
                 <configuration>
-                    <systemProperties>
-                        <property>
-                            <name>token</name>
-                            <value>${token}</value>
-                        </property>
-                    </systemProperties>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>testng.xml</suiteXmlFile>
-                    </suiteXmlFiles>
+<!--                    <systemProperties>-->
+<!--                        <property>-->
+<!--                            <name>token</name>-->
+<!--                            <value>${token}</value>-->
+<!--                        </property>-->
+<!--                    </systemProperties>-->
+<!--                    <suiteXmlFiles>-->
+<!--                        <suiteXmlFile>testng.xml</suiteXmlFile>-->
+<!--                    </suiteXmlFiles>-->
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectjweaver.version}/aspectjweaver-${aspectjweaver.version}.jar" -Xmx1024m
                     </argLine>

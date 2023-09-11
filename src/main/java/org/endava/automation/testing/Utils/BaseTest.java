@@ -21,7 +21,7 @@ public class BaseTest {
     protected WebDriver driver;
     protected String baseUrl;
     protected SoftAssert softAssert;
-    protected static final GitConfig GIT_CONFIG = ConfigCache.getOrCreate(GitConfig.class);
+    protected static final GitConfig gitConfig = ConfigCache.getOrCreate(GitConfig.class);
 
     @BeforeClass
     protected void beforeClass() throws IOException {
@@ -73,10 +73,10 @@ public class BaseTest {
         GitOperations gitOps = new GitOperations();
 
         try {
-            gitOps.createBranchAndCommit(GIT_CONFIG.repoPath(), newBranchName);
-            gitOps.pushToRemote(GIT_CONFIG.repoPath(), token);
-            gitOps.createPullRequest(GIT_CONFIG.repoOwner(), GIT_CONFIG.repoName(), GIT_CONFIG.prTitle(),
-                GIT_CONFIG.prDescription(), newBranchName, currentBranch, token);
+            gitOps.createBranchAndCommit(gitConfig.repoPath(), newBranchName);
+            gitOps.pushToRemote(gitConfig.repoPath(), token);
+            gitOps.createPullRequest(gitConfig.repoOwner(), gitConfig.repoName(), gitConfig.prTitle(),
+                gitConfig.prDescription(), newBranchName, currentBranch, token);
         } catch (IOException | GitAPIException e) {
             e.printStackTrace();
         }
