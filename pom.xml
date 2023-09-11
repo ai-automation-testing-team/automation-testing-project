@@ -9,8 +9,8 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>16</maven.compiler.source>
+        <maven.compiler.target>16</maven.compiler.target>
 
         <selenium.version>4.8.1</selenium.version>
         <lombok.version>1.18.20</lombok.version>
@@ -34,8 +34,10 @@
         <base.url>http://zero.webappsecurity.com/</base.url>
         <driver.version>116.0.5845.96</driver.version>
         <browser.type>chrome</browser.type>
-        <token></token>
+        <git.token></git.token>
+        <ai.token></ai.token>
     </properties>
+
 
     <build>
         <plugins>
@@ -54,7 +56,8 @@
                         <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <argLine>
-                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectjweaver.version}/aspectjweaver-${aspectjweaver.version}.jar" -Xmx1024m
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectjweaver.version}/aspectjweaver-${aspectjweaver.version}.jar"
+                        -Xmx1024m
                     </argLine>
                 </configuration>
                 <dependencies>
@@ -93,12 +96,21 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>9</source>
-                    <target>9</target>
+                    <source>16</source>
+                    <target>16</target>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
+
+    <repositories>
+        <repository>
+            <id>github</id>
+            <name>GitHub OWNER Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/ai-automation-testing-team/AI-In-Test-Automation</url>
+        </repository>
+    </repositories>
 
     <profiles>
         <profile>
@@ -128,7 +140,37 @@
             </properties>
         </profile>
     </profiles>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.theokanning.openai-gpt3-java</groupId>
+                <artifactId>service</artifactId>
+                <version>0.16.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
+
+
+        <dependency>
+            <groupId>org.ai.automation</groupId>
+            <artifactId>ai-in-test-automation</artifactId>
+            <version>0.0.2-TEST</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.jupiter</groupId>
+                    <artifactId>junit-jupiter-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.junit.jupiter</groupId>
+                    <artifactId>junit-jupiter-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
@@ -140,18 +182,6 @@
             <artifactId>testng</artifactId>
             <version>${testng.version}</version>
             <scope>compile</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit-jupiter-api.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit-jupiter-engine.version}</version>
         </dependency>
 
         <dependency>

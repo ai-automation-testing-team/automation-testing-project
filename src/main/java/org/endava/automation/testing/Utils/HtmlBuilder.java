@@ -17,6 +17,39 @@ public class HtmlBuilder {
         return text.replace("\n", "<br>");
     }
 
+
+    public static String extractTestDescriptionText(String input) {
+        String[] lines = input.split("\n");
+        StringBuilder result = new StringBuilder();
+
+        boolean isExtracting = false;
+        int lastTestStepIndex = -1;
+
+        // Find the last [Test Step] line
+        for (int i = lines.length - 1; i >= 0; i--) {
+            if (lines[i].startsWith("[Test Step]")) {
+                lastTestStepIndex = i;
+                break;
+            }
+        }
+
+        // Extract the relevant lines
+        for (int i = 0; i < lines.length; i++) {
+            if (lines[i].startsWith("[Test Name]")) {
+                isExtracting = true;
+            }
+            if (isExtracting) {
+                result.append(lines[i]).append("\n");
+            }
+            if (i == lastTestStepIndex) {
+                break;
+            }
+        }
+
+        return result.toString().trim();
+    }
+
+
     public static String buildHtmlFromDescriptionContent(String content) {
         String template;
         try {
@@ -34,34 +67,27 @@ public class HtmlBuilder {
 
         String[] lines = content.split("\n");
 
-        boolean copyCodeBlock = false;
 
         for (String line : lines) {
-            if (line.equals("Copy code")) {
-                copyCodeBlock = true;
-                continue;
-            }
 
-            if (copyCodeBlock) {
-                if (line.startsWith("[Test Name] - ")) {
-                    testName.append(formatForHtml(line.substring("[Test Name] - ".length()).trim()));
-                } else if (line.startsWith("[Test Summary] - ")) {
-                    testSummary.append(formatForHtml(line.substring("[Test Summary] - ".length()).trim()));
-                } else if (line.startsWith("[Test Step] - ")) {
-                    if (!insideTestSteps) {
-                        insideTestSteps = true;
-                        // The table header is added only once here
-                    }
-                    String stepLine = line.substring("[Test Step] - ".length());
-                    String[] parts = stepLine.split(" - \\[Test Data\\] - ");
-                    if (parts.length == 2) {
-                        String step = formatForHtml(parts[0].trim());
-                        String[] testDataResult = parts[1].split(" - \\[Test Result\\] - ");
-                        if (testDataResult.length == 2) {
-                            String testData = formatForHtml(testDataResult[0].trim());
-                            String testResult = formatForHtml(testDataResult[1].trim());
-                            testSteps.append(String.format(TEST_STEPS_TEMPLATE, step, testData, testResult));
-                        }
+            if (line.startsWith("[Test Name] - ")) {
+                testName.append(formatForHtml(line.substring("[Test Name] - ".length()).trim()));
+            } else if (line.startsWith("[Test Summary] - ")) {
+                testSummary.append(formatForHtml(line.substring("[Test Summary] - ".length()).trim()));
+            } else if (line.startsWith("[Test Step] - ")) {
+                if (!insideTestSteps) {
+                    insideTestSteps = true;
+                    // The table header is added only once here
+                }
+                String stepLine = line.substring("[Test Step] - ".length());
+                String[] parts = stepLine.split(" - \\[Test Data\\] - ");
+                if (parts.length == 2) {
+                    String step = formatForHtml(parts[0].trim());
+                    String[] testDataResult = parts[1].split(" - \\[Test Result\\] - ");
+                    if (testDataResult.length == 2) {
+                        String testData = formatForHtml(testDataResult[0].trim());
+                        String testResult = formatForHtml(testDataResult[1].trim());
+                        testSteps.append(String.format(TEST_STEPS_TEMPLATE, step, testData, testResult));
                     }
                 }
             }
@@ -73,8 +99,14 @@ public class HtmlBuilder {
         return template;
     }
 
-    public static String buildHtmlFromAnalysisContent(String content) throws IOException {
-        String template = new String(Files.readAllBytes(Paths.get("src/main/resources/html/analysis.html")));
+
+    public static String buildHtmlFromAnalysisContent(String content)  {
+        String template = null;
+        try {
+            template = new String(Files.readAllBytes(Paths.get("src/main/resources/html/analysis.html")));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         StringBuilder dynamicContent = new StringBuilder();
 
@@ -104,4 +136,5 @@ public class HtmlBuilder {
 
         return template.replace(CONTENT_PLACEHOLDER, dynamicContent.toString());
     }
+
 }

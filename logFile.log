@@ -1,160 +1,107 @@
-2023-09-08 10:21:39 - [Info] Base URL: http://zero.webappsecurity.com/
-2023-09-08 10:21:39 - [Info] Web Driver Type: chrome
-2023-09-08 10:21:39 - [Info] Creating WebDriver instance...
-2023-09-08 10:21:40 - Reading https://chromedriver.storage.googleapis.com/ to seek chromedriver
-2023-09-08 10:21:41 - Downloading https://chromedriver.storage.googleapis.com/116.0.5845.96/chromedriver_win32.zip
-2023-09-08 10:21:41 - Error HTTP 404 executing https://chromedriver.storage.googleapis.com/116.0.5845.96/chromedriver_win32.zip
-2023-09-08 10:21:41 - Clearing WebDriverManager resolution cache
-2023-09-08 10:21:41 - There was an error managing chromedriver 116.0.5845.96 (Error HTTP 404 executing https://chromedriver.storage.googleapis.com/116.0.5845.96/chromedriver_win32.zip) ... trying again avoiding reading release from repository
-2023-09-08 10:21:42 - Reading https://chromedriver.storage.googleapis.com/ to seek chromedriver
-2023-09-08 10:21:43 - Exporting webdriver.chrome.driver as C:\Users\jtofilovski\.cache\selenium\chromedriver\win32\114.0.5735.90\chromedriver.exe
-2023-09-08 10:21:49 - [Info] WebDriver instance is created.
-2023-09-08 10:21:49 - [User Flow] User logs in using credentials. Username: username, Password: password
-2023-09-08 10:21:49 - [UI Interaction] Clicking the 'Sign In' button.
-2023-09-08 10:21:50 - [UI Interaction] Performing login with credentials.
-2023-09-08 10:21:50 - [UI Interaction] Inserting username: username
-2023-09-08 10:21:50 - [UI Interaction] Clearing and sending keys to element: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: user_login]
-2023-09-08 10:21:50 - [Element Locating] Moving to the element: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: user_login]
-2023-09-08 10:21:50 - [Element Locating] Moved to the element successfully.
-2023-09-08 10:21:50 - [UI Interaction] Cleared and sent keys successfully.
-2023-09-08 10:21:50 - [UI Interaction] Inserting password: password
-2023-09-08 10:21:50 - [UI Interaction] Clearing and sending keys to element: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: user_password]
-2023-09-08 10:21:50 - [Element Locating] Moving to the element: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: user_password]
-2023-09-08 10:21:50 - [Element Locating] Moved to the element successfully.
-2023-09-08 10:21:50 - [UI Interaction] Cleared and sent keys successfully.
-2023-09-08 10:21:50 - [UI Interaction] Clicking the 'Sign In' button.
-2023-09-08 10:21:52 - [UI Interaction] User is successfully logged in.
-2023-09-08 10:21:52 - [Test Step] Test with name: checkNullPointerException has started.
-2023-09-08 10:21:52 - [User Flow] User reads value from 'From Account' field.
-2023-09-08 10:21:52 - [Test Step] Test with name: checkNullPointerException has ended.
-2023-09-08 10:21:52 - [Test Step] Test with name: checkDivisionByZero has started.
-2023-09-08 10:21:52 - [User Flow] User calculates withdrawal/deposit ratio for account: Loan
-2023-09-08 10:21:52 - [Element Locating] Waiting for the element to be present.
-2023-09-08 10:21:52 - [Element Locating] Element found: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: account_activity_tab]
-2023-09-08 10:21:53 - [User Flow] User navigates to 'Account Activity' page.
-2023-09-08 10:21:53 - [UI Interaction] Choosing account: Loan
-2023-09-08 10:21:53 - [UI Interaction] Choosing an option containing text: Loan
-2023-09-08 10:21:53 - [Element Locating] Waiting for elements to be present within the root element.
-2023-09-08 10:21:53 - [Element Locating] Found 6 elements within the root element.
-2023-09-08 10:21:53 - [Element Locating] Option with text 'Loan' selected.
-2023-09-08 10:21:53 - [UI Interaction] Waiting for the element to be clickable: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: aa_accountId]
-2023-09-08 10:21:53 - [Element Locating] Moving to the element: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: aa_accountId]
-2023-09-08 10:21:53 - [Element Locating] Moved to the element successfully.
-2023-09-08 10:21:53 - [UI Interaction] Element is clickable and has been clicked.
-2023-09-08 10:21:53 - [UI Interaction] Calculating withdrawal/deposit ratio.
-2023-09-08 10:21:53 - [Element Locating] Reading withdrawals from the table.
-2023-09-08 10:21:53 - [Element Locating] Waiting for elements to be present.
-2023-09-08 10:21:53 - [Element Locating] Found 2 elements.
-2023-09-08 10:21:53 - [UI Interaction] Sum of withdrawals: 2770.0
-2023-09-08 10:21:53 - [Element Locating] Reading deposits from the table.
-2023-09-08 10:21:53 - [Element Locating] Waiting for elements to be present.
-2023-09-08 10:21:53 - [Element Locating] Found 2 elements.
-2023-09-08 10:21:53 - [UI Interaction] Sum of deposits: 0.0
-2023-09-08 10:21:53 - [UI Interaction] Withdrawal/Deposit Ratio: Infinity
-2023-09-08 10:21:53 - [Test Step] Test with name: checkDivisionByZero has ended.
-2023-09-08 10:21:53 - [Test Step] Test with name: checkTimeoutException has started.
-2023-09-08 10:21:53 - [User Flow] User reads the account balance (difference between total inflow and total outflow).
-2023-09-08 10:21:53 - [Element Locating] Waiting for the element to be present.
-2023-09-08 10:22:04 - [Test Step] Test with name: checkTimeoutException has ended.
-2023-09-08 10:22:04 - [Test Step] Test with name: checkStaleElementReferenceException has started.
-2023-09-08 10:22:04 - [User Flow] User inserts payee: Bank of America, account: Loan, amount: 500, date and description: Test Description and gets description value after paying.
-2023-09-08 10:22:04 - [Element Locating] Waiting for the element to be present.
-2023-09-08 10:22:04 - [Element Locating] Element found: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: pay_bills_tab]
-2023-09-08 10:22:04 - [User Flow] User navigates to 'Pay Bills' page.
-2023-09-08 10:22:04 - [UI Interaction] Choosing payee: Bank of America
-2023-09-08 10:22:04 - [Element Locating] Waiting for the element to be present.
-2023-09-08 10:22:05 - [Element Locating] Element found: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: sp_payee]
-2023-09-08 10:22:05 - [UI Interaction] Choosing an option containing text: Bank of America
-2023-09-08 10:22:05 - [Element Locating] Waiting for elements to be present within the root element.
-2023-09-08 10:22:05 - [Element Locating] Found 4 elements within the root element.
-2023-09-08 10:22:05 - [Element Locating] Option with text 'Bank of America' selected.
-2023-09-08 10:22:05 - [UI Interaction] Waiting for the element to be clickable: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: sp_payee]
-2023-09-08 10:22:05 - [Element Locating] Moving to the element: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: sp_payee]
-2023-09-08 10:22:05 - [Element Locating] Moved to the element successfully.
-2023-09-08 10:22:05 - [UI Interaction] Element is clickable and has been clicked.
-2023-09-08 10:22:05 - [UI Interaction] Choosing account: Loan
-2023-09-08 10:22:05 - [Element Locating] Waiting for the element to be present.
-2023-09-08 10:22:05 - [Element Locating] Element found: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: sp_account]
-2023-09-08 10:22:05 - [UI Interaction] Choosing an option containing text: Loan
-2023-09-08 10:22:05 - [Element Locating] Waiting for elements to be present within the root element.
-2023-09-08 10:22:05 - [Element Locating] Found 6 elements within the root element.
-2023-09-08 10:22:05 - [Element Locating] Option with text 'Loan' selected.
-2023-09-08 10:22:05 - [UI Interaction] Waiting for the element to be clickable: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: sp_account]
-2023-09-08 10:22:05 - [Element Locating] Moving to the element: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: sp_account]
-2023-09-08 10:22:05 - [Element Locating] Moved to the element successfully.
-2023-09-08 10:22:05 - [UI Interaction] Element is clickable and has been clicked.
-2023-09-08 10:22:05 - [UI Interaction] Inserting amount: 500
-2023-09-08 10:22:05 - [Element Locating] Waiting for the element to be present.
-2023-09-08 10:22:05 - [Element Locating] Element found: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: sp_amount]
-2023-09-08 10:22:05 - [UI Interaction] Clearing and sending keys to element: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: sp_amount]
-2023-09-08 10:22:05 - [Element Locating] Moving to the element: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: sp_amount]
-2023-09-08 10:22:06 - [Element Locating] Moved to the element successfully.
-2023-09-08 10:22:06 - [UI Interaction] Cleared and sent keys successfully.
-2023-09-08 10:22:06 - [UI Interaction] Inserting date: 2023-09-01
-2023-09-08 10:22:06 - [Element Locating] Waiting for the element to be present.
-2023-09-08 10:22:06 - [Element Locating] Element found: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: sp_date]
-2023-09-08 10:22:06 - [UI Interaction] Clearing and sending keys to element: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: sp_date]
-2023-09-08 10:22:06 - [Element Locating] Moving to the element: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: sp_date]
-2023-09-08 10:22:06 - [Element Locating] Moved to the element successfully.
-2023-09-08 10:22:06 - [UI Interaction] Cleared and sent keys successfully.
-2023-09-08 10:22:06 - [UI Interaction] Inserting description: Test Description
-2023-09-08 10:22:06 - [Element Locating] Waiting for the element to be present.
-2023-09-08 10:22:06 - [Element Locating] Element found: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: sp_description]
-2023-09-08 10:22:06 - [UI Interaction] Clearing and sending keys to element: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: sp_description]
-2023-09-08 10:22:06 - [Element Locating] Moving to the element: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: sp_description]
-2023-09-08 10:22:06 - [Element Locating] Moved to the element successfully.
-2023-09-08 10:22:06 - [UI Interaction] Cleared and sent keys successfully.
-2023-09-08 10:22:06 - [Element Locating] Waiting for the element to be present.
-2023-09-08 10:22:06 - [Element Locating] Element found: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: sp_date]
-2023-09-08 10:22:06 - [UI Interaction] Clicking the 'Pay' button.
-2023-09-08 10:22:06 - [Element Locating] Waiting for the element to be present.
-2023-09-08 10:22:06 - [Element Locating] Element found: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: pay_saved_payees]
-2023-09-08 10:22:06 - [UI Interaction] Waiting for the element to be clickable: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: pay_saved_payees]
-2023-09-08 10:22:06 - [Element Locating] Moving to the element: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: pay_saved_payees]
-2023-09-08 10:22:07 - [Element Locating] Moved to the element successfully.
-2023-09-08 10:22:07 - [UI Interaction] Element is clickable and has been clicked.
-2023-09-08 10:22:07 - [Test Step] Test with name: checkStaleElementReferenceException has ended.
-2023-09-08 10:22:07 - [Test Step] Test with name: checkInvalidElementStateException has started.
-2023-09-08 10:22:07 - [User Flow] User transfers 500 dollars from Checking account to Credit account and inserts description Test Description
-2023-09-08 10:22:07 - [Element Locating] Waiting for the element to be present.
-2023-09-08 10:22:07 - [Element Locating] Element found: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: transfer_funds_tab]
-2023-09-08 10:22:07 - [User Flow] User navigates to 'Transfer Funds' page.
-2023-09-08 10:22:07 - [UI Interaction] Choosing 'From Account': Checking
-2023-09-08 10:22:07 - [UI Interaction] Choosing an option containing text: Checking
-2023-09-08 10:22:07 - [Element Locating] Waiting for elements to be present within the root element.
-2023-09-08 10:22:07 - [Element Locating] Found 6 elements within the root element.
-2023-09-08 10:22:07 - [Element Locating] Option with text 'Checking' selected.
-2023-09-08 10:22:07 - [UI Interaction] Waiting for the element to be clickable: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: tf_fromAccountId]
-2023-09-08 10:22:07 - [Element Locating] Moving to the element: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: tf_fromAccountId]
-2023-09-08 10:22:08 - [Element Locating] Moved to the element successfully.
-2023-09-08 10:22:08 - [UI Interaction] Element is clickable and has been clicked.
-2023-09-08 10:22:08 - [UI Interaction] Choosing 'To Account': Credit
-2023-09-08 10:22:08 - [UI Interaction] Choosing an option containing text: Credit
-2023-09-08 10:22:08 - [Element Locating] Waiting for elements to be present within the root element.
-2023-09-08 10:22:08 - [Element Locating] Found 6 elements within the root element.
-2023-09-08 10:22:08 - [Element Locating] Option with text 'Credit' selected.
-2023-09-08 10:22:08 - [UI Interaction] Waiting for the element to be clickable: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: tf_toAccountId]
-2023-09-08 10:22:08 - [Element Locating] Moving to the element: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: tf_toAccountId]
-2023-09-08 10:22:08 - [Element Locating] Moved to the element successfully.
-2023-09-08 10:22:08 - [UI Interaction] Element is clickable and has been clicked.
-2023-09-08 10:22:08 - [UI Interaction] Inserting amount value: 500
-2023-09-08 10:22:08 - [UI Interaction] Clearing and sending keys to element: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: tf_amount]
-2023-09-08 10:22:08 - [Element Locating] Moving to the element: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: tf_amount]
-2023-09-08 10:22:08 - [Element Locating] Moved to the element successfully.
-2023-09-08 10:22:08 - [UI Interaction] Cleared and sent keys successfully.
-2023-09-08 10:22:08 - [UI Interaction] Inserting description: Test Description
-2023-09-08 10:22:08 - [UI Interaction] Clearing and sending keys to element: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: tf_description]
-2023-09-08 10:22:08 - [Element Locating] Moving to the element: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: tf_description]
-2023-09-08 10:22:09 - [Element Locating] Moved to the element successfully.
-2023-09-08 10:22:09 - [UI Interaction] Cleared and sent keys successfully.
-2023-09-08 10:22:09 - [UI Interaction] Clicking the 'Submit' button.
-2023-09-08 10:22:09 - [User Flow] User edits the description to New Test Description
-2023-09-08 10:22:09 - [UI Interaction] Inserting description: New Test Description
-2023-09-08 10:22:09 - [UI Interaction] Clearing and sending keys to element: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: tf_description]
-2023-09-08 10:22:09 - [Element Locating] Moving to the element: [[ChromeDriver: chrome on WINDOWS (489f457206014793d4d07bf865eed3fc)] -> id: tf_description]
-2023-09-08 10:22:09 - [Element Locating] Moved to the element successfully.
-2023-09-08 10:22:09 - [Test Step] Test with name: checkInvalidElementStateException has ended.
-2023-09-08 10:22:09 - onError
+2023-09-11 15:05:44 - [Info] - Base URL: http://zero.webappsecurity.com/
+2023-09-11 15:05:44 - [Info] - Web Driver Type: chrome-headless
+2023-09-11 15:05:44 - [Info] - Creating WebDriver instance...
+2023-09-11 15:05:45 - Reading https://chromedriver.storage.googleapis.com/ to seek chromedriver
+2023-09-11 15:05:47 - Downloading https://chromedriver.storage.googleapis.com/116.0.5845.96/chromedriver_win32.zip
+2023-09-11 15:05:47 - Error HTTP 404 executing https://chromedriver.storage.googleapis.com/116.0.5845.96/chromedriver_win32.zip
+2023-09-11 15:05:47 - Clearing WebDriverManager resolution cache
+2023-09-11 15:05:47 - There was an error managing chromedriver 116.0.5845.96 (Error HTTP 404 executing https://chromedriver.storage.googleapis.com/116.0.5845.96/chromedriver_win32.zip) ... trying again avoiding reading release from repository
+2023-09-11 15:05:48 - Reading https://chromedriver.storage.googleapis.com/ to seek chromedriver
+2023-09-11 15:05:49 - Exporting webdriver.chrome.driver as C:\Users\vsushelski\.cache\selenium\chromedriver\win32\114.0.5735.90\chromedriver.exe
+2023-09-11 15:05:58 - [Info] - WebDriver instance is created.
+2023-09-11 15:05:58 - [User Flow] - User logs in using credentials - Username: username, Password: password
+2023-09-11 15:05:58 - [UI Interaction] - Clicking the 'Sign In' button.
+2023-09-11 15:05:58 - [UI Interaction] - Performing login with credentials.
+2023-09-11 15:05:58 - [UI Interaction] - Inserting username: username
+2023-09-11 15:05:58 - [UI Interaction] - Clearing and sending keys to element: [[ChromeDriver: chrome on WINDOWS (5e0a130d69679fcbbc34b70671f3ec68)] -> id: user_login]
+2023-09-11 15:05:58 - [Element Locating] - Moving to the element: [[ChromeDriver: chrome on WINDOWS (5e0a130d69679fcbbc34b70671f3ec68)] -> id: user_login]
+2023-09-11 15:05:58 - [Element Locating] - Moved to the element successfully.
+2023-09-11 15:05:59 - [UI Interaction] - Cleared and sent keys successfully.
+2023-09-11 15:05:59 - [UI Interaction] - Inserting password: password
+2023-09-11 15:05:59 - [UI Interaction] - Clearing and sending keys to element: [[ChromeDriver: chrome on WINDOWS (5e0a130d69679fcbbc34b70671f3ec68)] -> id: user_password]
+2023-09-11 15:05:59 - [Element Locating] - Moving to the element: [[ChromeDriver: chrome on WINDOWS (5e0a130d69679fcbbc34b70671f3ec68)] -> id: user_password]
+2023-09-11 15:05:59 - [Element Locating] - Moved to the element successfully.
+2023-09-11 15:05:59 - [UI Interaction] - Cleared and sent keys successfully.
+2023-09-11 15:05:59 - [UI Interaction] - Clicking the 'Sign In' button.
+2023-09-11 15:06:00 - [UI Interaction] - User is successfully logged in.
+2023-09-11 15:06:00 - [Test Step] - Test with name: verifyTransferFundsFromSavingsToCheckingAccount has started.
+2023-09-11 15:06:00 - [User Flow] - User navigates to Account Activity to choose Account: Savings
+2023-09-11 15:06:00 - [Element Locating] - Waiting for the element to be present.
+2023-09-11 15:06:00 - [Element Locating] - Element found: [[ChromeDriver: chrome on WINDOWS (5e0a130d69679fcbbc34b70671f3ec68)] -> id: account_activity_tab]
+2023-09-11 15:06:00 - [UI Interaction] - Waiting for the element to be clickable: [[ChromeDriver: chrome on WINDOWS (5e0a130d69679fcbbc34b70671f3ec68)] -> id: account_activity_tab]
+2023-09-11 15:06:00 - [Element Locating] - Moving to the element: [[ChromeDriver: chrome on WINDOWS (5e0a130d69679fcbbc34b70671f3ec68)] -> id: account_activity_tab]
+2023-09-11 15:06:01 - [Element Locating] - Moved to the element successfully.
+2023-09-11 15:06:02 - [UI Interaction] - Element is clickable and has been clicked.
+2023-09-11 15:06:02 - [User Flow] - User navigates to 'Account Activity' page.
+2023-09-11 15:06:02 - [UI Interaction] - Choosing account: Savings
+2023-09-11 15:06:02 - [UI Interaction] - Choosing an option containing text: Savings
+2023-09-11 15:06:02 - [Element Locating] - Waiting for elements to be present within the root element.
+2023-09-11 15:06:02 - [Element Locating] - Found 6 elements within the root element.
+2023-09-11 15:06:02 - [Element Locating] - Option with text 'Savings' selected.
+2023-09-11 15:06:02 - [UI Interaction] - Waiting for the element to be clickable: [[ChromeDriver: chrome on WINDOWS (5e0a130d69679fcbbc34b70671f3ec68)] -> id: aa_accountId]
+2023-09-11 15:06:02 - [Element Locating] - Moving to the element: [[ChromeDriver: chrome on WINDOWS (5e0a130d69679fcbbc34b70671f3ec68)] -> id: aa_accountId]
+2023-09-11 15:06:02 - [Element Locating] - Moved to the element successfully.
+2023-09-11 15:06:02 - [UI Interaction] - Element is clickable and has been clicked.
+2023-09-11 15:06:02 - [User Flow] - User reads Deposits and calculate Deposits sum
+2023-09-11 15:06:02 - [Element Locating] - Reading deposits from the table.
+2023-09-11 15:06:02 - [Element Locating] - Waiting for elements to be present.
+2023-09-11 15:06:02 - [Element Locating] - Found 3 elements.
+2023-09-11 15:06:02 - [UI Interaction] - Sum of deposits: 1984.3
+2023-09-11 15:06:02 - [User Flow] - User reads Withdrawals and calculate Withdrawals sum
+2023-09-11 15:06:02 - [Element Locating] - Reading withdrawals from the table.
+2023-09-11 15:06:02 - [Element Locating] - Waiting for elements to be present.
+2023-09-11 15:06:02 - [Element Locating] - Found 3 elements.
+2023-09-11 15:06:02 - [UI Interaction] - Sum of withdrawals: 50.0
+2023-09-11 15:06:02 - [User Flow] - User makes Money Transfer from Account: Savings to Account: Checking with Amount: 1934.3 and Description: Test Description
+2023-09-11 15:06:02 - [Element Locating] - Waiting for the element to be present.
+2023-09-11 15:06:02 - [Element Locating] - Element found: [[ChromeDriver: chrome on WINDOWS (5e0a130d69679fcbbc34b70671f3ec68)] -> id: transfer_funds_tab]
+2023-09-11 15:06:02 - [UI Interaction] - Waiting for the element to be clickable: [[ChromeDriver: chrome on WINDOWS (5e0a130d69679fcbbc34b70671f3ec68)] -> id: transfer_funds_tab]
+2023-09-11 15:06:02 - [Element Locating] - Moving to the element: [[ChromeDriver: chrome on WINDOWS (5e0a130d69679fcbbc34b70671f3ec68)] -> id: transfer_funds_tab]
+2023-09-11 15:06:02 - [Element Locating] - Moved to the element successfully.
+2023-09-11 15:06:03 - [UI Interaction] - Element is clickable and has been clicked.
+2023-09-11 15:06:03 - [User Flow] - User navigates to 'Transfer Funds' page.
+2023-09-11 15:06:03 - [UI Interaction] - Choosing 'From Account': Savings
+2023-09-11 15:06:03 - [UI Interaction] - Choosing an option containing text: Savings
+2023-09-11 15:06:03 - [Element Locating] - Waiting for elements to be present within the root element.
+2023-09-11 15:06:03 - [Element Locating] - Found 6 elements within the root element.
+2023-09-11 15:06:03 - [Element Locating] - Option with text 'Savings' selected.
+2023-09-11 15:06:03 - [UI Interaction] - Waiting for the element to be clickable: [[ChromeDriver: chrome on WINDOWS (5e0a130d69679fcbbc34b70671f3ec68)] -> id: tf_fromAccountId]
+2023-09-11 15:06:03 - [Element Locating] - Moving to the element: [[ChromeDriver: chrome on WINDOWS (5e0a130d69679fcbbc34b70671f3ec68)] -> id: tf_fromAccountId]
+2023-09-11 15:06:03 - [Element Locating] - Moved to the element successfully.
+2023-09-11 15:06:03 - [UI Interaction] - Element is clickable and has been clicked.
+2023-09-11 15:06:03 - [UI Interaction] - Choosing 'To Account': Checking
+2023-09-11 15:06:03 - [UI Interaction] - Choosing an option containing text: Checking
+2023-09-11 15:06:03 - [Element Locating] - Waiting for elements to be present within the root element.
+2023-09-11 15:06:03 - [Element Locating] - Found 6 elements within the root element.
+2023-09-11 15:06:03 - [Element Locating] - Option with text 'Checking' selected.
+2023-09-11 15:06:03 - [UI Interaction] - Waiting for the element to be clickable: [[ChromeDriver: chrome on WINDOWS (5e0a130d69679fcbbc34b70671f3ec68)] -> id: tf_toAccountId]
+2023-09-11 15:06:03 - [Element Locating] - Moving to the element: [[ChromeDriver: chrome on WINDOWS (5e0a130d69679fcbbc34b70671f3ec68)] -> id: tf_toAccountId]
+2023-09-11 15:06:03 - [Element Locating] - Moved to the element successfully.
+2023-09-11 15:06:03 - [UI Interaction] - Element is clickable and has been clicked.
+2023-09-11 15:06:03 - [UI Interaction] - Inserting amount value: 1934.3
+2023-09-11 15:06:03 - [UI Interaction] - Clearing and sending keys to element: [[ChromeDriver: chrome on WINDOWS (5e0a130d69679fcbbc34b70671f3ec68)] -> id: tf_amount]
+2023-09-11 15:06:03 - [Element Locating] - Moving to the element: [[ChromeDriver: chrome on WINDOWS (5e0a130d69679fcbbc34b70671f3ec68)] -> id: tf_amount]
+2023-09-11 15:06:03 - [Element Locating] - Moved to the element successfully.
+2023-09-11 15:06:04 - [UI Interaction] - Cleared and sent keys successfully.
+2023-09-11 15:06:04 - [UI Interaction] - Inserting description: Test Description
+2023-09-11 15:06:04 - [UI Interaction] - Clearing and sending keys to element: [[ChromeDriver: chrome on WINDOWS (5e0a130d69679fcbbc34b70671f3ec68)] -> id: tf_description]
+2023-09-11 15:06:04 - [Element Locating] - Moving to the element: [[ChromeDriver: chrome on WINDOWS (5e0a130d69679fcbbc34b70671f3ec68)] -> id: tf_description]
+2023-09-11 15:06:04 - [Element Locating] - Moved to the element successfully.
+2023-09-11 15:06:04 - [UI Interaction] - Cleared and sent keys successfully.
+2023-09-11 15:06:04 - [UI Interaction] - Clicking the 'Continue' button.
+2023-09-11 15:06:04 - [UI Interaction] - Clicking the 'Submit' button.
+2023-09-11 15:06:04 - [User Flow] - User validates that Transaction is Submitted and returning the Transaction Amount
+2023-09-11 15:06:04 - [Element Locating] - Waiting for the element to be present.
+2023-09-11 15:06:04 - [Element Locating] - Element found: [[ChromeDriver: chrome on WINDOWS (5e0a130d69679fcbbc34b70671f3ec68)] -> class name: alert-success]
+2023-09-11 15:06:04 - [UI Interaction] - Reading transaction message: You successfully submitted your transaction.
+2023-09-11 15:06:04 - [UI Interaction] - Reading Amount field after transaction
+2023-09-11 15:06:04 - [Element Locating] - Waiting for the element to be present.
+2023-09-11 15:06:04 - [Element Locating] - Element found: [[ChromeDriver: chrome on WINDOWS (5e0a130d69679fcbbc34b70671f3ec68)] -> css selector: .board-content .row:last-child div:last-child]
+2023-09-11 15:06:04 - [UI Interaction] - Transaction Amount value is: $ 1934.3
+2023-09-11 15:06:04 - [User Flow] - User validates that Transaction Amount is: $ 1934.3
+2023-09-11 15:06:04 - [Test Step] - Test with name: verifyTransferFundsFromSavingsToCheckingAccount has ended.
+2023-09-11 15:06:19 - Could not update test case: test case with uuid c718a8b4-21c6-4d60-8f24-925167e282c4 not found
+2023-09-11 15:06:19 - onError
 java.net.SocketException: Connection reset
 	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
 	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426)
