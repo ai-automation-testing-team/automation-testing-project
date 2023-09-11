@@ -19,6 +19,7 @@ target/
 
 *.log
 
+my.properties
 ### NetBeans ###
 nbproject/private/
 build/
