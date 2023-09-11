@@ -1,32 +1,16 @@
-2023-09-11 15:26:59 - [TestNG] Running:
+2023-09-11 15:32:01 - [TestNG] Running:
   C:\Users\jtofilovski\AppData\Local\JetBrains\IntelliJIdea2020.3\temp-testng-customsuite.xml
 
-2023-09-11 15:27:00 - [Info] - Base URL: http://zero.webappsecurity.com/
-2023-09-11 15:27:00 - [Info] - Web Driver Type: chrome
-2023-09-11 15:27:00 - [Info] - Creating WebDriver instance...
-2023-09-11 15:27:00 - Reading https://chromedriver.storage.googleapis.com/ to seek chromedriver
-2023-09-11 15:27:02 - Downloading https://chromedriver.storage.googleapis.com/116.0.5845.96/chromedriver_win32.zip
-2023-09-11 15:27:02 - Error HTTP 404 executing https://chromedriver.storage.googleapis.com/116.0.5845.96/chromedriver_win32.zip
-2023-09-11 15:27:02 - Clearing WebDriverManager resolution cache
-2023-09-11 15:27:02 - There was an error managing chromedriver 116.0.5845.96 (Error HTTP 404 executing https://chromedriver.storage.googleapis.com/116.0.5845.96/chromedriver_win32.zip) ... trying again avoiding reading release from repository
-2023-09-11 15:27:03 - Reading https://chromedriver.storage.googleapis.com/ to seek chromedriver
-2023-09-11 15:27:05 - Exporting webdriver.chrome.driver as C:\Users\jtofilovski\.cache\selenium\chromedriver\win32\114.0.5735.90\chromedriver.exe
-2023-09-11 15:27:14 - [Info] - WebDriver instance is created.
-2023-09-11 15:27:14 - [Test Step] - Test with name: dummyTest has started.
-2023-09-11 15:27:15 - [Test Step] - Test with name: dummyTest has ended.
-2023-09-11 15:27:15 - onError
-java.net.SocketException: Connection reset
-	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
-	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426)
-	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:259)
-	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
-	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
-	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
-	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
-	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
-	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-09-11 15:32:01 - [Info] - Base URL: http://zero.webappsecurity.com/
+2023-09-11 15:32:01 - [Info] - Web Driver Type: chrome
+2023-09-11 15:32:01 - [Info] - Creating WebDriver instance...
+2023-09-11 15:32:01 - Reading https://chromedriver.storage.googleapis.com/ to seek chromedriver
+2023-09-11 15:32:03 - Downloading https://chromedriver.storage.googleapis.com/116.0.5845.96/chromedriver_win32.zip
+2023-09-11 15:32:03 - Error HTTP 404 executing https://chromedriver.storage.googleapis.com/116.0.5845.96/chromedriver_win32.zip
+2023-09-11 15:32:03 - Clearing WebDriverManager resolution cache
+2023-09-11 15:32:03 - There was an error managing chromedriver 116.0.5845.96 (Error HTTP 404 executing https://chromedriver.storage.googleapis.com/116.0.5845.96/chromedriver_win32.zip) ... trying again avoiding reading release from repository
+2023-09-11 15:32:04 - Reading https://chromedriver.storage.googleapis.com/ to seek chromedriver
+2023-09-11 15:32:06 - Exporting webdriver.chrome.driver as C:\Users\jtofilovski\.cache\selenium\chromedriver\win32\114.0.5735.90\chromedriver.exe
+2023-09-11 15:32:13 - [Info] - WebDriver instance is created.
+2023-09-11 15:32:13 - [Test Step] - Test with name: dummyTest has started.
+2023-09-11 15:33:40 - [Test Step] - Test with name: dummyTest has ended.
