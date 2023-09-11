@@ -63,10 +63,10 @@ jobs:
           authToken: ${{secrets.GITHUB_TOKEN}}
           context: 'Test report'
           state: 'success'
-          target_url: https://change_me.pages.github.io/${{ github.run_number }}/
+          target_url: https://ai-automation-testing-team.github.io/automation-testing-project/${{ github.run_number }}/
 
       - name: Test Report in summary
         if: always()
         run: |
           echo '### Test Report' >> $GITHUB_STEP_SUMMARY
-          echo '[Results](https://change_me.pages.github.io/${{ github.run_number }}/ "Allure Report")' >> $GITHUB_STEP_SUMMARY
+          echo '[Results](https://ai-automation-testing-team.github.io/automation-testing-project/${{ github.run_number }}/ "Allure Report")' >> $GITHUB_STEP_SUMMARY
