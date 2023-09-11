@@ -158,7 +158,7 @@
         <dependency>
             <groupId>org.ai.automation</groupId>
             <artifactId>ai-in-test-automation</artifactId>
-            <version>0.0.2-TEST</version>
+            <version>0.0.3</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.junit.jupiter</groupId>
