@@ -108,7 +108,7 @@
         <repository>
             <id>github</id>
             <name>GitHub OWNER Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/ai-automation-testing-team/AI-In-Test-Automation</url>
+            <url>https://maven.pkg.github.com/ai-automation-testing-team/*</url>
         </repository>
     </repositories>
 

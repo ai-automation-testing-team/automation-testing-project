@@ -26,11 +26,16 @@ jobs:
           distribution: 'adopt'
           cache: 'maven'
 
+      - name: Set up Maven Authentication
+        env:
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+        run: |
+          echo "<settings><servers><server><id>github</id><username>MisterAiAutomation</username><password>${GITHUB_TOKEN}</password></server></servers></settings>" > ~/.m2/settings.xml
+          
+
       - name: Run initial setup tests from maven
         run: |
           mvn clean test '-Dsurefire.suiteXmlFiles=src/test/resources/testSuite.xml' -Dbrowser.type=chrome-headless -Dgit.token=${{ secrets.GIT_TOKEN }} -Dai.token=${{ secrets.AI_TOKEN }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
 
       - name: Get Allure history
         uses: actions/checkout@v2
