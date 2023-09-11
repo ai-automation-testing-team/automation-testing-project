@@ -31,7 +31,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
         run: |
           echo "<settings><servers><server><id>github</id><username>MisterAiAutomation</username><password>${GITHUB_TOKEN}</password></server></servers></settings>" > ~/.m2/settings.xml
-          
+
+      - name: Set Git Remote URL
+        run: |
+          git remote set-url origin https://MisterAiAutomation:${{ secrets.GIT_TOKEN }}@github.com/ai-automation-testing-team/automation-testing-project.git          
 
       - name: Run initial setup tests from maven
         run: |
