@@ -1,16 +1,16 @@
-2023-09-11 15:32:01 - [TestNG] Running:
+2023-09-11 15:37:02 - [TestNG] Running:
   C:\Users\jtofilovski\AppData\Local\JetBrains\IntelliJIdea2020.3\temp-testng-customsuite.xml
 
-2023-09-11 15:32:01 - [Info] - Base URL: http://zero.webappsecurity.com/
-2023-09-11 15:32:01 - [Info] - Web Driver Type: chrome
-2023-09-11 15:32:01 - [Info] - Creating WebDriver instance...
-2023-09-11 15:32:01 - Reading https://chromedriver.storage.googleapis.com/ to seek chromedriver
-2023-09-11 15:32:03 - Downloading https://chromedriver.storage.googleapis.com/116.0.5845.96/chromedriver_win32.zip
-2023-09-11 15:32:03 - Error HTTP 404 executing https://chromedriver.storage.googleapis.com/116.0.5845.96/chromedriver_win32.zip
-2023-09-11 15:32:03 - Clearing WebDriverManager resolution cache
-2023-09-11 15:32:03 - There was an error managing chromedriver 116.0.5845.96 (Error HTTP 404 executing https://chromedriver.storage.googleapis.com/116.0.5845.96/chromedriver_win32.zip) ... trying again avoiding reading release from repository
-2023-09-11 15:32:04 - Reading https://chromedriver.storage.googleapis.com/ to seek chromedriver
-2023-09-11 15:32:06 - Exporting webdriver.chrome.driver as C:\Users\jtofilovski\.cache\selenium\chromedriver\win32\114.0.5735.90\chromedriver.exe
-2023-09-11 15:32:13 - [Info] - WebDriver instance is created.
-2023-09-11 15:32:13 - [Test Step] - Test with name: dummyTest has started.
-2023-09-11 15:33:40 - [Test Step] - Test with name: dummyTest has ended.
+2023-09-11 15:37:02 - [Info] - Base URL: http://zero.webappsecurity.com/
+2023-09-11 15:37:02 - [Info] - Web Driver Type: chrome
+2023-09-11 15:37:02 - [Info] - Creating WebDriver instance...
+2023-09-11 15:37:03 - Reading https://chromedriver.storage.googleapis.com/ to seek chromedriver
+2023-09-11 15:37:05 - Downloading https://chromedriver.storage.googleapis.com/116.0.5845.96/chromedriver_win32.zip
+2023-09-11 15:37:05 - Error HTTP 404 executing https://chromedriver.storage.googleapis.com/116.0.5845.96/chromedriver_win32.zip
+2023-09-11 15:37:05 - Clearing WebDriverManager resolution cache
+2023-09-11 15:37:05 - There was an error managing chromedriver 116.0.5845.96 (Error HTTP 404 executing https://chromedriver.storage.googleapis.com/116.0.5845.96/chromedriver_win32.zip) ... trying again avoiding reading release from repository
+2023-09-11 15:37:06 - Reading https://chromedriver.storage.googleapis.com/ to seek chromedriver
+2023-09-11 15:37:07 - Exporting webdriver.chrome.driver as C:\Users\jtofilovski\.cache\selenium\chromedriver\win32\114.0.5735.90\chromedriver.exe
+2023-09-11 15:37:14 - [Info] - WebDriver instance is created.
+2023-09-11 15:37:14 - [Test Step] - Test with name: dummyTest has started.
+2023-09-11 15:38:14 - [Test Step] - Test with name: dummyTest has ended.

@@ -68,7 +68,7 @@ public class BaseTest {
         String currentBranch = git.getRepository().getFullBranch();
         long l = System.currentTimeMillis();
         String newBranchName = "ai-description-" + l;
-        String token = System.getProperty("token");
+        String token = System.getenv("token");
 
         GitOperations gitOps = new GitOperations();
 
