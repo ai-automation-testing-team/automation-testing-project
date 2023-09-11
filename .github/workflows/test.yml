@@ -62,14 +62,14 @@ jobs:
         if: always()
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.PERSONAL_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: allure-history
 
       - name: Post the link to the report
         if: always()
         uses: Sibz/github-status-action@v1
         with:
-          authToken: ${{secrets.PERSONAL_TOKEN}}
+          authToken: ${{ secrets.GITHUB_TOKEN }}
           context: 'Test report'
           state: 'success'
           target_url: https://ai-automation-testing-team.github.io/automation-testing-project/${{ github.run_number }}/
