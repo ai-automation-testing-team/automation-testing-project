@@ -49,7 +49,7 @@
                     <systemProperties>
                         <property>
                             <name>token</name>
-                            <value>${token}</value>
+                            <value>${git.token}</value>
                         </property>
                     </systemProperties>
                     <suiteXmlFiles>
