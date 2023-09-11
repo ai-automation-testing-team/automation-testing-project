@@ -32,7 +32,7 @@
         <owner.version>1.0.12</owner.version>
         <testSuitePath>src\test\java\TestSuites\</testSuitePath>
         <base.url>http://zero.webappsecurity.com/</base.url>
-        <driver.version></driver.version>
+        <driver.version>116.0.5845.96</driver.version>
         <browser.type>chrome</browser.type>
         <git.token></git.token>
         <ai.token></ai.token>
