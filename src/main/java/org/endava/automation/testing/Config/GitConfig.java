@@ -9,6 +9,7 @@ public interface GitConfig extends Config {
     String repoPath();
 
     @Key("token")
+    @ConverterClass(GitTokenConverter.class)
     String token();
 
     @Key("repo.owner")

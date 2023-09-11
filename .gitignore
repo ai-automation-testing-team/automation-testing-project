@@ -17,6 +17,9 @@ target/
 *.iml
 *.ipr
 
+*.log
+
+my.properties
 ### NetBeans ###
 nbproject/private/
 build/
@@ -24,3 +27,5 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
+**/allure-results/*
