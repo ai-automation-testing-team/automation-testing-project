@@ -66,15 +66,6 @@ jobs:
           publish_dir: allure-history
 
 
-      - name: Post the link to the report
-        if: always()
-        uses: Sibz/github-status-action@v1
-        with:
-          authToken: ${{ secrets.GITHUB_TOKEN }}
-          context: 'Test report'
-          state: 'success'
-          target_url: https://ai-automation-testing-team.github.io/automation-testing-project/${{ github.run_number }}/
-
       - name: Test Report in summary
         if: always()
         run: |
