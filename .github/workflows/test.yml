@@ -58,19 +58,13 @@ jobs:
           allure_report: allure-report
           allure_history: allure-history
 
-      #      - name: Deploy report to Github Pages
-      #        if: always()
-      #        uses: peaceiris/actions-gh-pages@v3
-      #        with:
-      #          github_token: ${{ secrets.GITHUB_TOKEN }}
-      #          publish_dir: allure-history
+      - name: Deploy report to Github Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: allure-history
 
-      - name: Manual Push
-        run: |
-          git config user.name "MrAiAutomation"
-          git config user.email "misterrai1903@gmail.com"
-          git remote set-url origin https://MrAiAutomation:${{ secrets.GIT_TOKEN }}@github.com/ai-automation-testing-team/automation-testing-project.git
-          git push origin gh-pages
 
       - name: Post the link to the report
         if: always()
