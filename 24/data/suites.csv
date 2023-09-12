@@ -1,0 +1,103 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Tue Sep 12 07:01:41 GMT 2023","Tue Sep 12 07:01:45 GMT 2023","3876","Suite Example","Test example","org.endava.automation.testing.tests.TestNGPassedExamplesTest","org.endava.automation.testing.tests.TestNGPassedExamplesTest","verifyTransferFundsFromSavingsToCheckingAccount","verifyTransferFundsFromSavingsToCheckingAccount","<!DOCTYPE html>
+<html lang=""en"">
+<head>
+    <meta charset=""UTF-8"">
+    <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
+    <title>Test Case Description</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(220,236,253,1) 100%);
+        }
+        .container {
+            width: 80%;
+            margin: 2em auto;
+            background-color: #1b2735;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            color: #e5e5e5;
+        }
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 15px;
+            border: 1px solid #3498db;
+        }
+        th {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+        }
+        .highlight {
+            color: #3498db;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+<div class=""container"">
+    <h1>Test Case Description</h1>
+    <h2>Test Name</h2>
+    <p>Verify Transfer Funds From Savings to Checking Account</p>
+    <h2>Test Summary</h2>
+    <p>This test case verifies the successful transfer of funds from a savings account to a checking account.</p>
+    <h2>Test Steps</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Step</th>
+            <th>Test Data</th>
+            <th>Test Result</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+<td>User logs in using credentials</td>
+<td>Username: username, Password: password</td>
+<td>User is successfully logged in.</td>
+</tr>
+<tr>
+<td>User navigates to Account Activity to choose Account: Savings</td>
+<td>None</td>
+<td>User is on the Account Activity page.</td>
+</tr>
+<tr>
+<td>User reads Deposits and calculates Deposits sum</td>
+<td>None</td>
+<td>Sum of deposits is 1984.3.</td>
+</tr>
+<tr>
+<td>User reads Withdrawals and calculates Withdrawals sum</td>
+<td>None</td>
+<td>Sum of withdrawals is 50.0.</td>
+</tr>
+<tr>
+<td>User makes Money Transfer from Account: Savings to Account: Checking with Amount: 1934.3 and Description: Test Description</td>
+<td>None</td>
+<td>Transfer is successfully submitted.</td>
+</tr>
+<tr>
+<td>User validates that Transaction is Submitted and returns the Transaction Amount</td>
+<td>None</td>
+<td>Transaction is submitted and the amount is $1934.3.</td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
+
+
+"
