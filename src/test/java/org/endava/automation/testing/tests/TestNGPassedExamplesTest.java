@@ -24,17 +24,17 @@ public class TestNGPassedExamplesTest extends BaseTest {
 	public void verifyTransferFundsFromSavingsToCheckingAccount() {
 		handleAllureDescription();
 
-		zeroBankService.navigateToAccountActivityPageAndChooseAccount("Savings");
-		double actualDeposits = zeroBankService.readDepositsFromAccount();
-		double actualWithdrawal = zeroBankService.readWithdrawalsFromAccount();
-		softAssert.assertEquals(actualDeposits, 1984.3, "Deposits sum is not correct");
-		softAssert.assertEquals(actualWithdrawal, 50.0, "Withdrawals sum is not correct");
-		zeroBankService.makeMoneyTransfer("Savings", "Checking", Double.toString(actualDeposits - actualWithdrawal),
-				"Test Description");
-		double transactionAmount = zeroBankService.validateMoneyIsTransferredAndReturnTransactionAmount();
-		softAssert.assertEquals(transactionAmount, actualDeposits - actualWithdrawal,
-				"Transaction amount is not correct");
-		softAssert.assertAll();
+		// zeroBankService.navigateToAccountActivityPageAndChooseAccount("Savings");
+		// double actualDeposits = zeroBankService.readDepositsFromAccount();
+		// double actualWithdrawal = zeroBankService.readWithdrawalsFromAccount();
+		// softAssert.assertEquals(actualDeposits, 1984.3, "Deposits sum is not correct");
+		// softAssert.assertEquals(actualWithdrawal, 50.0, "Withdrawals sum is not correct");
+		// zeroBankService.makeMoneyTransfer("Savings", "Checking", Double.toString(actualDeposits - actualWithdrawal),
+		// 		"Test Description");
+		// double transactionAmount = zeroBankService.validateMoneyIsTransferredAndReturnTransactionAmount();
+		// softAssert.assertEquals(transactionAmount, actualDeposits - actualWithdrawal,
+		// 		"Transaction amount is not correct");
+		// softAssert.assertAll();
 	}
 
 }

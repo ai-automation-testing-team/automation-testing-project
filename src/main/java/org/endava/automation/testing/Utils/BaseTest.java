@@ -129,10 +129,7 @@ public class BaseTest {
         String content = annotation.content();
 
         if (!value && !content.isEmpty()) {
-            Allure.step("Adding description to test.");
-            Allure.step(content);
-            Allure.step(HtmlBuilder.buildHtmlFromDescriptionContent(content));
-            Allure.description(HtmlBuilder.buildHtmlFromDescriptionContent(content));
+            Allure.descriptionHtml(HtmlBuilder.buildHtmlFromDescriptionContent(content));
         }
     }
 
