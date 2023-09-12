@@ -26,7 +26,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 import static org.endava.automation.testing.Utils.FileHelper.getMavenBaseDirectory;
 import static org.endava.automation.testing.Utils.FileHelper.getSourceFileFromTestClass;
@@ -142,15 +141,20 @@ public class BaseTest {
         StringBuilder res = new StringBuilder();
         try {
             String log = new String(Files.readAllBytes(Paths.get("logFile.log")));
-            Arrays.stream(log.split("\n")).filter(s -> {
-                    if (LogType.DESCRIPTION.equals(logType)) {
-                        return !s.contains("[Element Locating]");
-                    }
-                    return true;
-                })
-                .collect(Collectors.toList())
-                .forEach(res::append);
+
+            if (LogType.DESCRIPTION.equals(logType)) {
+                Arrays.stream(log.split("\n")).filter(s -> !s.contains("[Element Locating]"))
+                    .toList()
+                    .forEach(res::append);
+
+            } else {
+                Arrays.stream(log.split("\n"))
+                    .skip(Math.max(0, log.split("\n").length - 10))
+                    .toList()
+                    .forEach(res::append);
+            }
             return res.toString();
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

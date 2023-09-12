@@ -21,6 +21,7 @@ public class TestNGFailedExamplesTest extends BaseTest {
     }
 
 
+
     // NullPointerException Scenario
     @Test()
     @AnalysisAI

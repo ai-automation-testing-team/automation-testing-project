@@ -100,7 +100,7 @@ public class HtmlBuilder {
     }
 
 
-    public static String buildHtmlFromAnalysisContent(String content)  {
+    public static String buildHtmlFromAnalysisContent(String content) {
         String template = null;
         try {
             template = new String(Files.readAllBytes(Paths.get("src/main/resources/html/analysis.html")));
@@ -109,13 +109,14 @@ public class HtmlBuilder {
         }
 
         StringBuilder dynamicContent = new StringBuilder();
-
         int previousEndIndex = 0;
-        while (true) {
-            int codeStartIndex = content.indexOf("CodeStart", previousEndIndex);
-            int codeEndIndex = content.indexOf("CodeEnd", previousEndIndex);
 
-            if (codeStartIndex == -1) {
+        while (true) {
+            int codeStartIndex = content.indexOf("```", previousEndIndex);
+            int codeEndIndex = content.indexOf("```", codeStartIndex + 3); // find end of the current code block
+
+            if (codeStartIndex == -1 || codeEndIndex == -1) {
+                // No more code blocks, append remaining content as a description
                 String remainingDescription = content.substring(previousEndIndex).trim();
                 if (!remainingDescription.isEmpty()) {
                     dynamicContent.append(String.format(DESCRIPTION_TEMPLATE, formatForHtml(remainingDescription)));
@@ -124,17 +125,18 @@ public class HtmlBuilder {
             }
 
             String description = content.substring(previousEndIndex, codeStartIndex).trim();
-            String codeBlock = content.substring(codeStartIndex + "CodeStart".length(), codeEndIndex).trim();
+            String codeBlock = content.substring(codeStartIndex + 3, codeEndIndex).trim();
 
             if (!description.isEmpty()) {
                 dynamicContent.append(String.format(DESCRIPTION_TEMPLATE, formatForHtml(description)));
             }
 
-            dynamicContent.append(String.format(CODE_BLOCK_TEMPLATE, codeBlock));
-            previousEndIndex = codeEndIndex + "CodeEnd".length();
+            dynamicContent.append(String.format(CODE_BLOCK_TEMPLATE, formatForHtml(codeBlock)));
+            previousEndIndex = codeEndIndex + 3; // skip ending ```
         }
 
         return template.replace(CONTENT_PLACEHOLDER, dynamicContent.toString());
     }
+
 
 }
