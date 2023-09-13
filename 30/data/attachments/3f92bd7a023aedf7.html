@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Case Description</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(220,236,253,1) 100%);
+        }
+        .container {
+            width: 80%;
+            margin: 2em auto;
+            background-color: #1b2735;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            color: #e5e5e5;
+        }
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 15px;
+            border: 1px solid #3498db;
+        }
+        th {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+        }
+        .highlight {
+            color: #3498db;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <h1>Test Case Description</h1>
+    <h2>Test Name</h2>
+    <p>Verify Transfer Funds from Savings to Checking Account</p>
+    <h2>Test Summary</h2>
+    <p>This test case verifies the successful transfer of funds from a savings account to a checking account.</p>
+    <h2>Test Steps</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Step</th>
+            <th>Test Data</th>
+            <th>Test Result</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+<td>User logs in using valid credentials</td>
+<td>Username: username, Password: password</td>
+<td>User successfully logs in.</td>
+</tr>
+<tr>
+<td>User navigates to Account Activity page and selects the Savings account</td>
+<td>N/A</td>
+<td>Account Activity page is displayed and Savings account is selected.</td>
+</tr>
+<tr>
+<td>User calculates the sum of deposits in the Savings account</td>
+<td>N/A</td>
+<td>Deposits sum is calculated correctly.</td>
+</tr>
+<tr>
+<td>User calculates the sum of withdrawals from the Savings account</td>
+<td>N/A</td>
+<td>Withdrawals sum is calculated correctly.</td>
+</tr>
+<tr>
+<td>User initiates a money transfer from the Savings account to the Checking account with the calculated amount and adds a description</td>
+<td>Transfer amount: (Deposits sum - Withdrawals sum), Description: Test Description</td>
+<td>Money transfer is successfully initiated.</td>
+</tr>
+<tr>
+<td>User verifies that the transaction amount displayed after the transfer is correct</td>
+<td>N/A</td>
+<td>Transaction amount is displayed correctly.</td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
+
+
