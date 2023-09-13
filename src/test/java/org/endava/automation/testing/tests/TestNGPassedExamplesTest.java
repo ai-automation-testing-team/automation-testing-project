@@ -20,7 +20,7 @@ public class TestNGPassedExamplesTest extends BaseTest {
 	}
 	// Passed Scenario
 	@Test()
-	@DescAI
+	@DescAI(value = false, content = "[Test Name] - verifyTransferFundsFromSavingsToCheckingAccount\n[Test Summary] - This test verifies the successful transfer of funds from the Savings account to the Checking account.\n\n[Test Step] - User navigates to the Account Activity page and selects the Savings account - [Test Data] - None - [Test Result] - The Savings account is selected successfully.\n[Test Step] - User calculates the sum of deposits and withdrawals in the Savings account - [Test Data] - None - [Test Result] - The sums of deposits and withdrawals are calculated correctly.\n[Test Step] - User initiates a money transfer from the Savings account to the Checking account with the calculated amount and a test description - [Test Data] - Amount: [calculated amount], Description: Test Description - [Test Result] - The transfer is initiated successfully.\n[Test Step] - User validates that the transaction amount is correct - [Test Data] - None - [Test Result] - The transaction amount is correct.")
 	public void verifyTransferFundsFromSavingsToCheckingAccount() {
 		handleAllureDescription();
 
