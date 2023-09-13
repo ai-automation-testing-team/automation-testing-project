@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed Sep 13 12:06:29 GMT 2023","Wed Sep 13 12:06:32 GMT 2023","3002","Suite Example","Test example","org.endava.automation.testing.tests.TestNGPassedExamplesTest","org.endava.automation.testing.tests.TestNGPassedExamplesTest","verifyTransferFundsFromSavingsToCheckingAccount","verifyTransferFundsFromSavingsToCheckingAccount",""
