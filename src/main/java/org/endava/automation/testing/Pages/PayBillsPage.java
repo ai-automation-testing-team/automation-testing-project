@@ -64,6 +64,7 @@ public class PayBillsPage extends ZeroBankBasePage {
         paySavedPayee(payee, account, amount, date, description);
         WebElement descriptionValue = waitAndFindElementFromRoot(By.id("sp_description"));
         clickPayButton();
+        Log.userFlowLogger("User paid and the page is refreshed.");
         return getElementValue(descriptionValue);
     }
 
@@ -77,25 +78,25 @@ public class PayBillsPage extends ZeroBankBasePage {
 
     public void insertPayeeName(String payeeName) {
         Log.uiLogger("Inserting Payee Name: " + payeeName);
-        WebElement inputPayeeName = waitAndFindElement(addNewPayeeForm, By.id("new_payee_name"));
+        WebElement inputPayeeName = waitAndFindElementFromRoot(By.id("np_new_payee_name"));
         clearAndSendKeys(inputPayeeName, payeeName);
     }
 
     public void insertPayeeAddress(String payeeAddress) {
         Log.uiLogger("Inserting Payee Address: " + payeeAddress);
-        WebElement inputPayeeAddress = waitAndFindElement(addNewPayeeForm, By.id("new_payee_address"));
+        WebElement inputPayeeAddress = waitAndFindElement(addNewPayeeForm, By.id("np_new_payee_address"));
         clearAndSendKeys(inputPayeeAddress, payeeAddress);
     }
 
     public void insertPayeeAccount(String payeeAccount) {
         Log.uiLogger("Inserting Payee Account: " + payeeAccount);
-        WebElement inputPayeeAccount = waitAndFindElement(addNewPayeeForm, By.id("new_payee_account"));
+        WebElement inputPayeeAccount = waitAndFindElement(addNewPayeeForm, By.id("np_new_payee_account"));
         clearAndSendKeys(inputPayeeAccount, payeeAccount);
     }
 
     public void insertPayeeDetails(String payeeDetails) {
         Log.uiLogger("Inserting Payee Details: " + payeeDetails);
-        WebElement inputPayeeDetails = waitAndFindElement(addNewPayeeForm, By.id("new_payee_details"));
+        WebElement inputPayeeDetails = waitAndFindElement(addNewPayeeForm, By.id("np_new_payee_details"));
         clearAndSendKeys(inputPayeeDetails, payeeDetails);
     }
 

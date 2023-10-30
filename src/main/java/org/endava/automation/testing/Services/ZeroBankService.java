@@ -22,6 +22,7 @@ public class ZeroBankService {
 
     public ZeroBankService(WebDriver driver) {
         homePage = new HomePage(driver);
+        myMoneyMapPage = new MyMoneyMapPage(driver); // Initialize myMoneyMapPage object
     }
 
     public void loginUsingCredentials(String userName, String password) {

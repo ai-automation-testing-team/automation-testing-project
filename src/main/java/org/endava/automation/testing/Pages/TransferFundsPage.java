@@ -71,6 +71,7 @@ public class TransferFundsPage extends ZeroBankBasePage {
         insertAmountValue(amount);
         insertDescription(description);
         clickContinue();
+        Log.userFlowLogger("User has inserted payment information and needs to submit or cancel them.");
     }
 
     public String readValueFromAccountFromField() {

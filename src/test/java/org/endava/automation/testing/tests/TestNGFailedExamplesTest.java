@@ -27,7 +27,7 @@ public class TestNGFailedExamplesTest extends BaseTest {
     @AnalysisAI
     public void verifyAccountFromValueIsEmpty() {
         String accountFromValue = zeroBankService.validateAccountFromInAccountActivity();
-        Assert.assertEquals(accountFromValue, "", "Account From value should be Empty");
+        Assert.assertEquals(accountFromValue, "1", "Account From value should be Empty");
     }
 
 
@@ -44,7 +44,6 @@ public class TestNGFailedExamplesTest extends BaseTest {
     // InvalidElementStateException Scenario
     @Test()
     @AnalysisAI
-    //check again
     public void verifyChangingDescriptionValueAfterMoneyTransfer() {
         String descriptionValue = zeroBankService.changeDescriptionAfterMoneyTransfer("Checking", "Credit Card", "500",
             "Test Description", "New Test Description");

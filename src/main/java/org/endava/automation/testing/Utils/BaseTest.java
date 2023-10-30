@@ -148,10 +148,10 @@ public class BaseTest {
                     .forEach(res::append);
 
             } else {
-                Arrays.stream(log.split("\n"))
-                    .skip(Math.max(0, log.split("\n").length - 10))
+                Arrays.stream(log.split("2023-"))
+                    .skip(Math.max(0, log.split("2023-").length - 10))
                     .toList()
-                    .forEach(res::append);
+                    .forEach(s -> res.append("2023-").append(s));
             }
             return res.toString();
 
